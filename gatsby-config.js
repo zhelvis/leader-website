@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby MUI Starter`,
+    title: `Leader`,
     siteUrl: 'http://example.com',
   },
   plugins: [
-    `gatsby-plugin-material-ui-dark-mode`,
+    `custom-plugin-material-ui`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
@@ -17,24 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-theme-i18n`,
-      options: {
-        defaultLang: `en`,
-        configPath: require.resolve(`./i18n/config.json`),
-      },
-    },
-    {
-      resolve: `gatsby-theme-i18n-react-i18next`,
-      options: {
-        locales: `./i18n/react-i18next`,
-        i18nextOptions: {
-          ns: ['index', 'layout', '404', 'page2'],
-        },
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -52,19 +36,16 @@ module.exports = {
             },
           },
         ],
-        defaultLayouts: {
-          default: require.resolve(`./src/components/layout.js`),
-        },
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Leader`,
+        short_name: `Leader`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FFFFFF`,
+        theme_color: `#0000FF`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

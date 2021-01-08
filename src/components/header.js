@@ -1,49 +1,49 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { LocalizedLink } from 'gatsby-theme-i18n'
-import { AppBar, Toolbar, Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import {
+  makeStyles,
+  AppBar,
+  Toolbar,
+  Typography,
+  useScrollTrigger,
+} from '@material-ui/core'
 
-import ThemeSwitcher from './themeSwitcher'
+import SideNav from './sideNav'
+import HeaderNav from './headerNav'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
   },
   title: {
-    marginRight: theme.spacing(2),
-    flexGrow: 1,
+    marginRight: theme.spacing(8),
   },
 }))
 
-const Header = ({ path }) => {
+const Header = () => {
   const classes = useStyles()
+
+  const headerTrigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: typeof window !== 'undefined' ? window : undefined,
+  })
+
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Gatsby MUI starter
-          </Typography>
-          <LocalizedLink to={path} language="ru">
-            ru
-          </LocalizedLink>
-          <LocalizedLink to={path} language="en">
-            en
-          </LocalizedLink>
-          <ThemeSwitcher />
-        </Toolbar>
-      </AppBar>
-    </div>
+    <AppBar
+      elevation={headerTrigger ? 4 : 0}
+      position="fixed"
+      color="inherit"
+      className={classes.appBar}
+    >
+      <Toolbar>
+        <SideNav />
+        <Typography className={classes.title} variant="h6">
+          Leader
+        </Typography>
+        <HeaderNav />
+      </Toolbar>
+    </AppBar>
   )
-}
-
-Header.defaultProps = {
-  path: '/',
-}
-
-Header.propTypes = {
-  path: PropTypes.string,
 }
 
 export default Header

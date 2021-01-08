@@ -1,19 +1,15 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
-import { LocalizedLink } from 'gatsby-theme-i18n'
+import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-const SecondPage = ({ pageContext }) => {
-  const { t } = useTranslation('page2')
-
+const SecondPage = () => {
   return (
-    <Layout originalPath={pageContext.originalPath}>
-      <SEO title={t('title')} description={t('description')} />
-      <h1>{t('hello')}</h1>
-      <LocalizedLink to="/">{t('link')}</LocalizedLink>
-    </Layout>
+    <React.Fragment>
+      <SEO title="second" description="second page" />
+      <h1>Hello from second page</h1>
+      <Link to="/">Go home</Link>
+    </React.Fragment>
   )
 }
 
