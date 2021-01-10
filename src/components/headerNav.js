@@ -25,8 +25,15 @@ const HeaderNav = () => {
       value={Object.values(paths).includes(pathname) ? pathname : false}
       indicatorColor="primary"
     >
-      {Object.entries(paths).map(([label, to]) => (
-        <Tab key={to} component={Link} value={to} to={to} label={label} />
+      {Object.entries(paths).map(([label, to], index) => (
+        <Tab
+          disableRipple
+          key={index}
+          component={Link}
+          value={to}
+          to={to}
+          label={label}
+        />
       ))}
     </Tabs>
   )

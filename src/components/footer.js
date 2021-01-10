@@ -4,6 +4,7 @@ import { makeStyles, Typography, Link } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(3),
+    backgroundColor: theme.palette.background.paper,
   },
   container: {
     height: 56,

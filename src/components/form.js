@@ -2,11 +2,12 @@ import React from 'react'
 
 import { makeStyles, TextField, Button, Grid } from '@material-ui/core'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   textfield: {
     width: '100%',
+    backgroundColor: theme.palette.background.paper,
   },
-})
+}))
 
 const Form = () => {
   const classes = useStyles()

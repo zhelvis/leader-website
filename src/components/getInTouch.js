@@ -8,7 +8,7 @@ import Form from './form'
 
 const GetInTouch = () => {
   return (
-    <Section title="Связаться с нами">
+    <Section id="contacts" title="Связаться с нами">
       <Grid item xs={12}>
         <Grid container spacing={3} wrap="wrap-reverse">
           <Grid item xs={12} md={8}>
