@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles, ButtonBase, Tooltip, Typography } from '@material-ui/core'
-import Img from 'gatsby-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,14 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PartnerLogoLink = ({ fixed, title, children, ...props }) => {
+const PartnerLogoLink = ({ title, children, ...props }) => {
   const classes = useStyles()
 
   return (
     <Tooltip title={<Typography variant="h6">{title}</Typography>}>
       <ButtonBase className={classes.root} {...props}>
-        {fixed && <Img fixed={fixed} />}
-        {children && children}
+        {children}
       </ButtonBase>
     </Tooltip>
   )

@@ -1,13 +1,14 @@
 import React from 'react'
-import { Tabs, Tab, makeStyles } from '@material-ui/core'
-import { Link } from 'gatsby'
+import { makeStyles, Button } from '@material-ui/core'
 
-import { useLocation } from '@reach/router'
+import Anchor from './anchor'
 
 import { paths } from '../config'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    flex: 1,
+    display: 'flex',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
@@ -15,27 +16,16 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const HeaderNav = () => {
-  const { pathname } = useLocation()
   const classes = useStyles()
 
   return (
-    <Tabs
-      className={classes.root}
-      aria-label="nav tabs"
-      value={Object.values(paths).includes(pathname) ? pathname : false}
-      indicatorColor="primary"
-    >
-      {Object.entries(paths).map(([label, to], index) => (
-        <Tab
-          disableRipple
-          key={index}
-          component={Link}
-          value={to}
-          to={to}
-          label={label}
-        />
+    <nav className={classes.root}>
+      {Object.entries(paths).map(([label, href], index) => (
+        <Anchor key={index} href={href}>
+          <Button>{label}</Button>
+        </Anchor>
       ))}
-    </Tabs>
+    </nav>
   )
 }
 

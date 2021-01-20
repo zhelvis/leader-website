@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Toolbar, Fab } from '@material-ui/core'
+import { makeStyles, Fab } from '@material-ui/core'
 
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 
@@ -25,10 +25,7 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <div className={classes.root}>
         <Header />
-        <main className={classes.content}>
-          <Toolbar id="back-to-top-anchor" />
-          {children}
-        </main>
+        <main className={classes.content}>{children}</main>
         <Footer />
       </div>
       <ScrollTop>

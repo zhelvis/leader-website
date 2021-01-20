@@ -66,7 +66,7 @@ const SideNav = () => {
         PaperProps={{ classes: { root: classes.drawerPaper } }}
       >
         <Toolbar />
-        <div className={classes.drawerContainer}>
+        <nav className={classes.drawerContainer}>
           <List onClick={toogleDrawer}>
             {Object.entries(paths).map(([label, to]) => (
               <li key={to}>
@@ -82,7 +82,7 @@ const SideNav = () => {
               </li>
             ))}
           </List>
-        </div>
+        </nav>
       </Drawer>
     </React.Fragment>
   )

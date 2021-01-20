@@ -1,5 +1,11 @@
 import React from 'react'
-import { makeStyles, AppBar, Toolbar, Typography } from '@material-ui/core'
+import {
+  makeStyles,
+  AppBar,
+  Toolbar,
+  Typography,
+  Container,
+} from '@material-ui/core'
 
 import SideNav from './sideNav'
 import HeaderNav from './headerNav'
@@ -9,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   title: {
-    marginRight: theme.spacing(8),
+    marginRight: theme.spacing(3),
   },
 }))
 
@@ -23,13 +29,15 @@ const Header = () => {
       color="inherit"
       className={classes.appBar}
     >
-      <Toolbar>
-        <SideNav />
-        <Typography className={classes.title} variant="h6">
-          Leader
-        </Typography>
-        <HeaderNav />
-      </Toolbar>
+      <Container maxWidth="lg">
+        <Toolbar disableGutters>
+          <SideNav />
+          <Typography className={classes.title} variant="h6">
+            Leader
+          </Typography>
+          <HeaderNav />
+        </Toolbar>
+      </Container>
     </AppBar>
   )
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import { makeStyles, Zoom, useScrollTrigger } from '@material-ui/core'
 
+import Anchor from './anchor'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'fixed',
@@ -18,21 +20,11 @@ const ScrollTop = ({ children }) => {
     threshold: 100,
   })
 
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#back-to-top-anchor'
-    )
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-  }
-
   return (
     <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
+      <Anchor className={classes.root} href="#back-to-top-anchor">
         {children}
-      </div>
+      </Anchor>
     </Zoom>
   )
 }

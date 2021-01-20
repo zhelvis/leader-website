@@ -34,12 +34,17 @@ const Form = () => {
             className={classes.textfield}
             label="Введите сообщение"
             multiline
-            rows={10}
+            rows={8}
             variant="outlined"
           />
         </Grid>
         <Grid item xs={12}>
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            size="large"
+            variant="contained"
+            color="primary"
+            type="submit"
+          >
             Отправить заявку
           </Button>
         </Grid>

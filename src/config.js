@@ -1,10 +1,6 @@
 export const paths = {
-  Home: '/',
-  Second: '/page-2/',
-  Mdx: '/post/',
+  'О нас': '#about',
+  ACM: '#acm',
+  Партнёры: '#partners',
+  Контакты: '#contacts',
 }
-
-export const hashes = [
-  { hash: 'partners', label: 'Партнёры' },
-  { hash: 'contacts', label: 'Контакты' },
-]
