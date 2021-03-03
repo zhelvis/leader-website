@@ -30,7 +30,7 @@
     "react-helmet": "6.1.0"
   },
   "devDependencies": {
-    "husky": "5.1.3",
+    "husky": "5",
     "lint-staged": "10.5.4",
     "prettier": "2.2.1"
   },
@@ -44,7 +44,8 @@
     "format": "prettier --write \"**/*.{js,jsx,json,mdx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": "https://github.com/zhelvis/gatsby-material-ui",
   "bugs": {
