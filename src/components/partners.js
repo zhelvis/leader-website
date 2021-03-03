@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 
@@ -27,19 +27,15 @@ const Partners = () => {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
-    query {
+    {
       volgaCampImage: file(relativePath: { eq: "volgaCamp.png" }) {
         childImageSharp {
-          fixed(width: 150) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 150, layout: FIXED)
         }
       }
       acmMisisImage: file(relativePath: { eq: "acmMisis.png" }) {
         childImageSharp {
-          fixed(width: 150) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 150, layout: FIXED)
         }
       }
     }
@@ -58,12 +54,16 @@ const Partners = () => {
         </Grid>
         <Grid item>
           <PartnerLogoLink href="http://acm.misis.ru/" title="ACM MISIS">
-            <Img fixed={data.acmMisisImage.childImageSharp.fixed} />
+            <GatsbyImage
+              image={data.acmMisisImage.childImageSharp.gatsbyImageData}
+            />
           </PartnerLogoLink>
         </Grid>
         <Grid item>
           <PartnerLogoLink href="https://volgacamp.ru/" title="Volga Camp">
-            <Img fixed={data.volgaCampImage.childImageSharp.fixed} />
+            <GatsbyImage
+              image={data.volgaCampImage.childImageSharp.gatsbyImageData}
+            />
           </PartnerLogoLink>
         </Grid>
       </Grid>

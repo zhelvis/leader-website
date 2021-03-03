@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Grid, Typography, makeStyles } from '@material-ui/core'
 
 import Section from './section'
@@ -21,12 +21,10 @@ const About = () => {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
-    query {
+    {
       teamImage: file(relativePath: { eq: "team.png" }) {
         childImageSharp {
-          fluid(maxWidth: 750, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 750, quality: 100, layout: CONSTRAINED)
         }
       }
     }
@@ -49,7 +47,7 @@ const About = () => {
           </Typography>
         </Grid>
         <Grid item md={6} sm={12} xs={12}>
-          <Img fluid={data.teamImage.childImageSharp.fluid} />
+          <GatsbyImage image={data.teamImage.childImageSharp.gatsbyImageData} />
         </Grid>
       </Grid>
     </Section>
