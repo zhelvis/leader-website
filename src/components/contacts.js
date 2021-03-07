@@ -17,14 +17,14 @@ const Contacts = () => {
     {
       Icon: PhoneIcon,
       title: 'Телефон',
-      text: 'profit-line-ok@yandex.ru',
-      href: 'mailto:profit-line-ok@yandex.ru',
+      text: '+7 495 003 24 54',
+      href: 'tel:+74950032454',
     },
     {
       Icon: AlternateEmailIcon,
       title: 'Email',
-      text: 'profit-line-ok@yandex.ru',
-      href: 'mailto:profit-line-ok@yandex.ru',
+      text: 'lider-sport2017@mail.ru',
+      href: 'mailto:lider-sport2017@mail.ru ',
     },
   ]
 

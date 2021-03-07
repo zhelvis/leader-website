@@ -18,6 +18,9 @@ export default responsiveFontSizes(
       primary: {
         main: '#0000FF',
       },
+      secondary: {
+        main: '#93DCFF'
+      }
     },
   })
 )

@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
+    color: theme.palette.text.primary
   },
   drawer: {
     width: '18em',
@@ -51,7 +52,6 @@ const SideNav = () => {
     <React.Fragment>
       <IconButton
         edge="start"
-        color="inherit"
         className={classes.iconButton}
         aria-label="toogle sidenav"
         onClick={toogleDrawer}

@@ -56,6 +56,7 @@ const Partners = () => {
           <PartnerLogoLink href="http://acm.misis.ru/" title="ACM MISIS">
             <GatsbyImage
               image={data.acmMisisImage.childImageSharp.gatsbyImageData}
+              alt="ACM MISIS logo"
             />
           </PartnerLogoLink>
         </Grid>
@@ -63,6 +64,7 @@ const Partners = () => {
           <PartnerLogoLink href="https://volgacamp.ru/" title="Volga Camp">
             <GatsbyImage
               image={data.volgaCampImage.childImageSharp.gatsbyImageData}
+              alt="Volga Camp logo"
             />
           </PartnerLogoLink>
         </Grid>

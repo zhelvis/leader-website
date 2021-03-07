@@ -34,7 +34,7 @@ const Acm = () => {
     <Section className={classes.root} id="acm">
       <Grid spacing={3} container wrap="wrap-reverse">
         <Grid item md={6} sm={12} xs={12}>
-          <GatsbyImage image={data.pcImage.childImageSharp.gatsbyImageData} />
+          <GatsbyImage image={data.pcImage.childImageSharp.gatsbyImageData} alt="ПК" />
         </Grid>
         <Grid item md={6} sm={12} xs={12}>
           <Typography className={classes.title} variant="h4">
@@ -43,9 +43,9 @@ const Acm = () => {
           <Typography className={classes.text} paragraph>
             Мы помогаем в организации школ и клубов по спортивному
             программированию, проведении сборов для школьников и студентов, а
-            также различных мероприятий с целью минимизация проблемы
+            также различных мероприятий с целью минимизации проблемы
             профориентации и трудоустройства молодёжи. Одной из основополагающих
-            целей организация является создание условий для интеллектуального
+            целей организации является создание условий для интеллектуального
             развития в сфере спортивного программирования, выявления и поддержки
             одарённых детей, вовлечения и формирования у детей и молодёжи
             мотивации к приобретению дополнительных навыков и знаний в области

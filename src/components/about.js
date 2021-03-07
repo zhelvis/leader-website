@@ -47,7 +47,7 @@ const About = () => {
           </Typography>
         </Grid>
         <Grid item md={6} sm={12} xs={12}>
-          <GatsbyImage image={data.teamImage.childImageSharp.gatsbyImageData} />
+          <GatsbyImage image={data.teamImage.childImageSharp.gatsbyImageData} alt="Футбольная команда" />
         </Grid>
       </Grid>
     </Section>
