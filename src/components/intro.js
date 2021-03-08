@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, makeStyles, Toolbar, Button } from '@material-ui/core'
+import { Typography, makeStyles, Button } from '@material-ui/core'
 
 
 import ScrollDown from './scrollDown'
@@ -11,11 +11,6 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     backgroundColor: theme.palette.background.paper,
     background: `linear-gradient(45deg, rgba(147,220,255,0.2528361686471463) 0%, rgba(84,162,247,0.24723392775078779) 100%)`,
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  content: {
-    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -31,11 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     width: '100%',
-  },
-  action: {
-    display: 'flex',
-    justifyContent: 'center',
-    paddingBottom: theme.spacing(6),
   },
   title: {
     color: theme.palette.primary.main,
@@ -64,6 +54,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       height: '4rem',
     },
+  },
+  scrollDown: {
+    position: 'absolute',
+    bottom: theme.spacing(6),
   }
 }))
 
@@ -71,33 +65,29 @@ const Intro = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
-      <Toolbar id="back-to-top-anchor" />
-      <div className={classes.content}>
-        <div className={classes.titleContainer}>
-          <Logo className={classes.logo} />
-          <Typography className={classes.title} variant="h1">
-            Leader
+    <div id="back-to-top-anchor" className={classes.root}>
+      <div className={classes.titleContainer}>
+        <Logo className={classes.logo} />
+        <Typography className={classes.title} variant="h1">
+          Leader
           </Typography>
-        </div>
-        <Typography align="center" className={classes.subtitle} variant="h5">
-          Развитие и популяризация спорта
+      </div>
+      <Typography align="center" className={classes.subtitle} variant="h5">
+        Развитие и популяризация спорта
         </Typography>
-        <div className={classes.buttonContainer}>
-          <Anchor href="#about" >
-            <Button color="primary" className={classes.button} variant="contained" size="large">
-              О нас
+      <div className={classes.buttonContainer}>
+        <Anchor href="#about" >
+          <Button color="primary" className={classes.button} variant="contained" size="large">
+            О нас
             </Button>
-          </Anchor>
-          <Anchor href="#contacts">
+        </Anchor>
+        <Anchor href="#contacts">
           <Button color="primary" className={classes.button} variant="contained" size="large">
             Контакты
             </Button>
-          </Anchor>
-          
-        </div>
+        </Anchor>
       </div>
-      <div className={classes.action}>
+      <div className={classes.scrollDown} >
         <ScrollDown />
       </div>
     </div>

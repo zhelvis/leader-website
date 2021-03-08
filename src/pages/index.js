@@ -10,7 +10,10 @@ import GetInTouch from '../components/getInTouch'
 const IndexPage = () => {
   return (
     <React.Fragment>
-      <SEO title="title" description="description" />
+      <SEO 
+        title="Центр Спортивной Интеграции 'Лидер'" 
+        description="description" 
+      />
       <Intro />
       <About />
       <Acm />
