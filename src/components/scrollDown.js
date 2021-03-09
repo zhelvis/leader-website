@@ -56,7 +56,7 @@ const ScrollDownIcon = (props) => {
 const ScrollDown = () => {
   return (
     <Anchor href="#about">
-      <IconButton color="primary">
+      <IconButton color="primary" aria-label="Scroll down">
         <ScrollDownIcon />
       </IconButton>
     </Anchor>

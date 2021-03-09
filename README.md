@@ -1,8 +1,9 @@
-# Gatsby-mui-starter starter template
+# Сайт АНО ЦСИ "Лидер"
 
-## feachers
+https://leader-sport.site
 
-- material-ui v4
-- i18n
-- jss isomorphic styling
-- dark mode support
+
+### TODO: 
+- миграция с material ui v4 -> v5
+- метрика
+

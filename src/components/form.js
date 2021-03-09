@@ -27,7 +27,7 @@ const Form = () => {
   const formik = useFormik({
     initialValues: { name: "", phone: "", message: "" },
     validationSchema: validationSchema,
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       console.log(values)
       try{
         await axios.post('/feedback', values)
@@ -36,6 +36,7 @@ const Form = () => {
           variant: 'success',
         });
   
+        resetForm()
       }catch(e){
         enqueueSnackbar(`Произошла ошибка при отправке запроса`,{ 
           variant: 'error',
