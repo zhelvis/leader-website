@@ -25,21 +25,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              quality: 100,
-              maxWidth: 768,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Leader`,

@@ -1,13 +1,20 @@
 import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
 import { Helmet } from 'react-helmet'
+import { SnackbarProvider } from 'notistack'
+import { Fade } from '@material-ui/core'
 
-import { MDXComponents } from './mdxComponents'
 import Layout from './components/layout'
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <React.Fragment>
+    <SnackbarProvider
+      maxSnack={3}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'center',
+      }}
+      TransitionComponent={Fade}
+    >
       <Helmet
         htmlAttributes={{
           lang: 'ru',
@@ -19,8 +26,8 @@ export const wrapRootElement = ({ element }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <MDXProvider components={MDXComponents}>{element}</MDXProvider>
-    </React.Fragment>
+      {element}
+    </SnackbarProvider>
   )
 }
 
