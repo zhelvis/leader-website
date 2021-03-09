@@ -28,7 +28,6 @@ const Form = () => {
     initialValues: { name: "", phone: "", message: "" },
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }) => {
-      console.log(values)
       try{
         await axios.post('/feedback', values)
 
@@ -66,6 +65,7 @@ const Form = () => {
             name="phone"
             label="Телефон"
             variant="outlined"
+            value={formik.values.phone}
             onChange={formik.handleChange}
             error={formik.touched.phone && Boolean(formik.errors.phone)}
             helperText={formik.touched.phone && formik.errors.phone}
@@ -81,6 +81,7 @@ const Form = () => {
             multiline
             rows={8}
             variant="outlined"
+            value={formik.values.message}
             onChange={formik.handleChange}
           />
         </Grid>
