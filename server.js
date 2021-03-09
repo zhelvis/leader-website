@@ -5,8 +5,8 @@ const nodemailer = require('nodemailer')
 
 const { mailAuth } = require('./secret')
 
-const PORT = 80
-const ADDRESSEE = 'war1lok@yandex.ru'
+const PORT = 8081
+const ADDRESSEE = 'lider-sport2017@mail.ru'
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.yandex.com',
