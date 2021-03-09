@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Leader`,
-    siteUrl: 'http://example.com',
+    siteUrl: 'https://leader-sport.site',
   },
   plugins: [
     `custom-plugin-material-ui`,
